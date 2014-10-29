@@ -1,0 +1,10 @@
+---
+kafka_event:
+  consumer_topic: events
+  group: thresh-event
+  producer_topic: alarm-state-transitions
+kafka_metric:
+  topic: metrics
+  group: thresh-metric
+monasca_conf_dir: /etc/monasca
+mysql_db: mon

@@ -1,0 +1,18 @@
+---
+- name: Add in custom apt key
+  apt_key: url=https://region-a.geo-1.objects.hpcloudsvc.com/v1/46995959297574/mini-mon/public_repo/mon.gpg state=present
+- name: Add in custom apt repo
+  apt_repository: repo='deb https://region-a.geo-1.objects.hpcloudsvc.com/v1/46995959297574/mini-mon/public_repo precise release' state=present
+
+- name: Install monasca-thresh
+  apt: name=monasca-thresh state=latest
+  notify:
+    - restart monasca-thresh
+
+- name: create conf_dir
+  file: path={{monasca_conf_dir}} state=directory owner=root group={{monasca_group}} mode=775
+
+- name: create conf_file from template
+  template: dest={{monasca_conf_dir}}/thresh-config.yml owner=root group={{monasca_group}} mode=640 src=thresh-config.yml.erb
+  notify:
+    - restart monasca-api
