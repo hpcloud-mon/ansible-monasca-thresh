@@ -12,6 +12,9 @@
 - name: create conf_dir
   file: path={{monasca_conf_dir}} state=directory owner=root group={{monasca_group}} mode=775
 
+- name: Add thresh user to the monasca_group
+  user: name={{thresh_user}} append=yes groups={{monasca_group}}
+
 - name: create conf_file from template
   template: dest={{monasca_conf_dir}}/thresh-config.yml owner=root group={{monasca_group}} mode=640 src=thresh-config.yml.j2
   notify:
