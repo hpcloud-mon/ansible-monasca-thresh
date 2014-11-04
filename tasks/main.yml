@@ -21,4 +21,4 @@
 - name: create conf_file from template
   template: dest={{monasca_conf_dir}}/thresh-config.yml owner=root group={{monasca_group}} mode=640 src=thresh-config.yml.j2
   notify:
-    - restart monasca-api
+    - restart monasca-thresh
