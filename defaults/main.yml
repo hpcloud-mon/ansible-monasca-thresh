@@ -7,4 +7,5 @@ kafka_metric:
   topic: metrics
   group: thresh-metric
 monasca_conf_dir: /etc/monasca
+monasca_group: monasca
 mysql_db: mon
