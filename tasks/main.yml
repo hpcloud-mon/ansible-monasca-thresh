@@ -24,3 +24,8 @@
   template: dest={{monasca_conf_dir}}/thresh-config.yml owner=root group={{monasca_group}} mode=640 src=thresh-config.yml.j2
   notify:
     - restart monasca-thresh
+
+- meta: flush_handlers
+
+- name: Enable the Service
+  service: name=monasca-thresh state=started enabled=yes
