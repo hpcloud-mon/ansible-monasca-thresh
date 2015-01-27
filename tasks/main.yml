@@ -12,7 +12,7 @@
   file: path={{monasca_jar_dir}} state=directory owner=root group=root mode=755
 
 - name: Fetch thresh jar
-  get_url: dest={{monasca_jar_dir}}/monasca-thresh.jar url="{{tarball_server}}/ci/monasca-thresh/monasca-thresh-{{thresh_version}}-shaded.jar"
+  get_url: dest={{monasca_jar_dir}}/monasca-thresh.jar url="{{tarball_base_url}}/monasca-thresh-{{thresh_version}}-shaded.jar"
   notify:
     - restart monasca-thresh
 
