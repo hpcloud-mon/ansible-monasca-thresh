@@ -7,5 +7,9 @@ kafka_metric:
   topic: metrics
   group: thresh-metric
 monasca_conf_dir: /etc/monasca
+monasca_jar_dir: /opt/monasca
 monasca_group: monasca
+thresh_group: thresh
 mysql_db: mon
+tarball_server: http://tarballs.openstack.org
+thresh_version: 1.0.0-SNAPSHOT
