@@ -21,13 +21,13 @@
   notify:
     - restart monasca-thresh
     
-- name: Run systemctl daemon-reload
-  command: systemctl daemon-reload
-
 - name: create service script from template
   template: dest=/etc/init.d/monasca-thresh owner=root group=root mode=744 src=monasca-thresh.j2
   notify:
     - restart monasca-thresh
+
+- command: systemctl daemon-reload
+  when: use_systemd
 
 - meta: flush_handlers
 
