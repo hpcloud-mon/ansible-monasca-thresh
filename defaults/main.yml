@@ -13,4 +13,3 @@ thresh_group: thresh
 mysql_db: mon
 thresh_tarball_base_url: http://tarballs.openstack.org/ci/monasca-thresh
 thresh_version: 1.0.0-SNAPSHOT
-use_systemd: True
