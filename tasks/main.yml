@@ -15,6 +15,7 @@
   get_url: dest={{monasca_jar_dir}}/monasca-thresh.jar url="{{thresh_tarball_base_url}}/monasca-thresh-{{thresh_version}}-shaded.jar" force=yes
   notify:
     - restart monasca-thresh
+  when: not skip_install
 
 - name: create conf_file from template
   template: dest={{monasca_conf_dir}}/thresh-config.yml owner=root group={{monasca_group}} mode=640 src=thresh-config.yml.j2
