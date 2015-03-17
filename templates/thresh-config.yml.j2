@@ -4,8 +4,10 @@ metricSpoutTasks: 2
 statsdConfig:
   host: {{thresh_statsd_host}}
   port: 8125
-  prefix: monasca.storm.metrics.
-  dimensions: '{"service":"monitoring","component":"storm"}'
+  prefix: monasca.storm.
+  dimensions: !!map
+    service : monitoring
+    component : storm
 
 
 metricSpoutConfig:
