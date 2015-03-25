@@ -1,6 +1,15 @@
 metricSpoutThreads: 2
 metricSpoutTasks: 2
 
+statsdConfig:
+  host: {{thresh_statsd_host}}
+  port: 8125
+  prefix: monasca.storm.
+  dimensions: !!map
+    service : monitoring
+    component : storm
+
+
 metricSpoutConfig:
   kafkaConsumerConfiguration:
   # See http://kafka.apache.org/documentation.html#api for semantics and defaults.
