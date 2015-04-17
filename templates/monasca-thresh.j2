@@ -13,7 +13,7 @@ case "$1" in
     start)
       $0 status
       if [ $? -ne 0 ]; then
-        sudo -Hu {{thresh_user}} /opt/storm/current/bin/storm jar {{monasca_jar_dir}}/monasca-thresh.jar monasca.thresh.ThresholdingEngine {{monasca_conf_dir}}/thresh-config.yml thresh-cluster
+        sudo -Hu {{thresh_user}} /opt/storm/current/bin/storm jar {{monasca_jar_dir}}/monasca-thresh.jar monasca.thresh.ThresholdingEngine {{ thresh_conf_file }} thresh-cluster
         exit $?
       else
         echo "monasca-thresh is already running"

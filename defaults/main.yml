@@ -7,6 +7,7 @@ kafka_metric:
   topic: metrics
   group: thresh-metric
 monasca_conf_dir: /etc/monasca
+thresh_conf_file: "{{ monasca_conf_dir }}/thresh-config.yml"
 monasca_jar_dir: /opt/monasca
 monasca_group: monasca
 thresh_group: thresh
