@@ -91,10 +91,10 @@ sporadicMetricNamespaces:
   - foo
 
 database:
-  driverClass: com.mysql.jdbc.Driver
-  url: "jdbc:mysql://{{mysql_host}}/{{mysql_db}}?useSSL=true"
-  user: "{{mysql_user}}"
-  password: "{{mysql_password}}"
+  driverClass: {{driver_class}}
+  url: jdbc:mysql://{{database_host}}/{{database_name}}?useSSL=true
+  user: {{database_user}}
+  password: {{database_password}}
   properties:
       ssl: false
   # the maximum amount of time to wait on an empty pool before throwing an exception
