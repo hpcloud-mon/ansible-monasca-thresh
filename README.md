@@ -9,6 +9,9 @@ Monasca-thresh requires storm to be running and should be installed on the nimbu
 - mysql_password
 - zookeeper_hosts - comma separated list of host:port pairs.
 
+## Optional
+- run_mode: One of Deploy, Stop, Install, Configure or Start. The default is Deploy which will do Install, Configure, then Start.
+
 ##License
 Apache
 
