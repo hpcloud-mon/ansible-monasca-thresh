@@ -16,4 +16,5 @@ thresh_tarball_base_url: http://tarballs.openstack.org/ci/monasca-thresh
 thresh_version: 1.1.0-SNAPSHOT
 thresh_statsd_host: localhost
 
+run_mode: Deploy
 skip_install: False
