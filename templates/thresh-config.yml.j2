@@ -2,7 +2,7 @@ metricSpoutThreads: 2
 metricSpoutTasks: 2
 
 statsdConfig:
-  host: {{thresh_statsd_host}}
+  host: "{{thresh_statsd_host}}"
   port: 8125
   prefix: monasca.storm.
   dimensions: !!map
@@ -13,10 +13,10 @@ statsdConfig:
 metricSpoutConfig:
   kafkaConsumerConfiguration:
   # See http://kafka.apache.org/documentation.html#api for semantics and defaults.
-    topic: {{kafka_metric.topic}}
+    topic: "{{kafka_metric.topic}}"
     numThreads: 1
-    groupId: {{kafka_metric.group}}
-    zookeeperConnect: {{zookeeper_hosts}}
+    groupId: "{{kafka_metric.group}}"
+    zookeeperConnect: "{{zookeeper_hosts}}"
     consumerId: 1
     socketTimeoutMs: 30000
     socketReceiveBufferBytes : 65536
@@ -40,10 +40,10 @@ metricSpoutConfig:
 eventSpoutConfig:
   kafkaConsumerConfiguration:
   # See http://kafka.apache.org/documentation.html#api for semantics and defaults.
-    topic: {{kafka_event.consumer_topic}}
+    topic: "{{kafka_event.consumer_topic}}"
     numThreads: 1
-    groupId: {{kafka_event.group}}
-    zookeeperConnect: {{zookeeper_hosts}}
+    groupId: "{{kafka_event.group}}"
+    zookeeperConnect: "{{zookeeper_hosts}}"
     consumerId: 1
     socketTimeoutMs: 30000
     socketReceiveBufferBytes : 65536
@@ -66,8 +66,8 @@ eventSpoutConfig:
 
 kafkaProducerConfig:
   # See http://kafka.apache.org/documentation.html#api for semantics and defaults.
-  topic: {{kafka_event.producer_topic}}
-  metadataBrokerList: {{kafka_hosts}}
+  topic: "{{kafka_event.producer_topic}}"
+  metadataBrokerList: "{{kafka_hosts}}"
   serializerClass: kafka.serializer.StringEncoder
   partitionerClass:
   requestRequiredAcks: 1
@@ -92,9 +92,9 @@ sporadicMetricNamespaces:
 
 database:
   driverClass: com.mysql.jdbc.Driver
-  url: jdbc:mysql://{{mysql_host}}/{{mysql_db}}?useSSL=true
-  user: {{mysql_user}}
-  password: {{mysql_password}}
+  url: "jdbc:mysql://{{mysql_host}}/{{mysql_db}}?useSSL=true"
+  user: "{{mysql_user}}"
+  password: "{{mysql_password}}"
   properties:
       ssl: false
   # the maximum amount of time to wait on an empty pool before throwing an exception
