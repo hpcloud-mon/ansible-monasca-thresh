@@ -18,3 +18,7 @@ thresh_statsd_host: localhost
 
 run_mode: Deploy
 skip_install: False
+
+# flag to track restart requirement during reconfigure
+monasca_thresh_restart_required: false
+

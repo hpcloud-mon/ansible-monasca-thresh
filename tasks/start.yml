@@ -1,3 +1,7 @@
 ---
-- name: Enable and Start Monasca-thresh
+- name: monasca-thresh | restart | restart monasca-thresh service
+  service: name=monasca-thresh state=restarted enabled=yes
+  when: monasca_thresh_restart_required
+
+- name: monasca-thresh | start | start monasca-thresh service
   service: name=monasca-thresh state=started enabled=yes
