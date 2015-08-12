@@ -1,4 +1,6 @@
 ---
+# ©Copyright 2015 Hewlett-Packard Development Company, L.P.
+
 kafka_event:
   consumer_topic: events
   group: thresh-event
