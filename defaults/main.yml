@@ -18,6 +18,8 @@ database_name: mon
 database_host: 192.168.10.4
 database_user: thresh
 database_password: password
+portNumber: 3306
+hibernate_support_enabled: "false"
 thresh_tarball_base_url: http://tarballs.openstack.org/ci/monasca-thresh
 thresh_version: 1.1.0-SNAPSHOT
 thresh_statsd_host: localhost
