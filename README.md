@@ -4,11 +4,9 @@ Monasca-thresh requires storm to be running and should be installed on the nimbu
 
 ##Requirements
 - kafka_hosts - comma separated list of host:port pairs.
-- databse_host - By default ssl will be used if available.
-- database_user
-- databse_password
-- datbase_name
-- driver_class - JDBC driver for databse connection
+- mysql_host - By default ssl will be used if available.
+- mysql_user
+- mysql_password
 - zookeeper_hosts - comma separated list of host:port pairs.
 
 ## Optional
