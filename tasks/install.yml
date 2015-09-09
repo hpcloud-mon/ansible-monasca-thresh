@@ -8,3 +8,4 @@
   get_url: dest={{monasca_jar_dir}}/monasca-thresh.jar url="{{thresh_tarball_base_url}}/monasca-thresh-{{thresh_version}}-shaded.jar" force=yes
   notify:
     - restart monasca-thresh
+  when: not skip_install

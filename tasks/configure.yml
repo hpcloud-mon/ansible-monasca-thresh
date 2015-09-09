@@ -28,7 +28,16 @@
 - set_fact: use_systemd=False
   when: init.stdout != 'systemd'
 
+- name: create systemd config
+  template: dest=/etc/systemd/system/monasca-thresh.service owner=root group=root mode=644 src=monasca-thresh.service.j2
+  notify:
+    - restart monasca-thresh
+  when: use_systemd
+
 - command: systemctl daemon-reload
   when: use_systemd
 
 - meta: flush_handlers
+
+- name: Enable the Service
+  service: name=monasca-thresh state=started enabled=yes
