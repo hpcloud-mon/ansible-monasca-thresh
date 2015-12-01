@@ -91,10 +91,10 @@ sporadicMetricNamespaces:
   - foo
 
 database:
-  driverClass: com.mysql.jdbc.Driver
-  url: "jdbc:mysql://{{mysql_host}}/{{mysql_db}}?useSSL=true"
-  user: "{{mysql_user}}"
-  password: "{{mysql_password}}"
+  driverClass: {{driver_class}}
+  url: jdbc:mysql://{{database_host}}/{{database_name}}?useSSL=true
+  user: {{database_user}}
+  password: {{database_password}}
   properties:
       ssl: false
   # the maximum amount of time to wait on an empty pool before throwing an exception
@@ -107,6 +107,22 @@ database:
   minSize: 8
 
   # the maximum number of connections to keep open
-
-
   maxSize: 41
+
+  #Flag indicates if Hibernate support enabled
+  hibernateSupport: {{hibernate_support_enabled}}
+
+  #Hibernate provider class
+  providerClass: com.zaxxer.hikari.hibernate.HikariConnectionProvider
+
+  #Database name
+  databaseName: {{database_name}}
+
+  #Server name/address
+  serverName: {{database_host}}
+
+  #Server port number
+  portNumber: {{database_port}}
+
+  #Hibernate auto configuretion parameter
+  autoConfig: validate
